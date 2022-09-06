@@ -1,0 +1,12 @@
+<aura:component
+    implements="flexipage:availableForAllPageTypes,force:appHostable" 
+    access="global"
+    controller="excluirApex"
+    >
+
+    <lightning:button variant="brand" label="Excluir conta" onclick="{! c.excluirDado }" />
+
+
+    
+
+</aura:component>

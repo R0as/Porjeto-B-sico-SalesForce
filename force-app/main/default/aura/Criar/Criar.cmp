@@ -1,0 +1,30 @@
+<aura:component 
+    implements="flexipage:availableForAllPageTypes,force:appHostable" 
+    access="global" 
+    controller="CriarApex">
+
+    <aura:attribute name="nome" type="String"/>
+    <aura:attribute name="telefone" type="String"/>
+    <aura:attribute name="descricao" type="String"/>
+
+    <aura:attribute name="esconderSpinner" type="Boolean" default="true"/>
+
+    <aura:if isTrue="{!v.esconderSpinner}">
+    <lightning:input type="text" label="Nome:" required="true" value="{!v.nome}"/>
+    <lightning:input type="text" label="Telefone:" required="true" value="{!v.telefone}"/>
+    <lightning:input type="text" label="Descrição:" value="{!v.descricao}"/>
+
+    <lightning:button variant="brand" label="Criar conta" onclick="{! c.enviarDados }" />
+    
+    
+    <aura:set attribute="else">
+
+
+    <div class="exampleHolder">
+        <lightning:spinner alternativeText="Loading" size="large" />
+    </div>
+  </aura:set>
+        
+  </aura:if> 
+
+</aura:component>

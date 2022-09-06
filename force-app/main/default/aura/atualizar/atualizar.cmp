@@ -1,0 +1,33 @@
+<aura:component 
+    implements="flexipage:availableForAllPageTypes,force:appHostable" 
+    access="global"
+    controller="atualizarApex">
+
+    <aura:attribute name="nome" type="String"/>
+    <aura:attribute name="telefone" type="String"/>
+    <aura:attribute name="descricao" type="String"/>
+
+    <h1>Atualizar todos os nomes "Henrique"</h1>
+    
+    <aura:attribute name="esconderSpinner" type="Boolean" default="true"/>
+
+    <aura:if isTrue="{!v.esconderSpinner}">
+    <lightning:input type="text" label="Nome:"  value="{!v.nome}"/>
+    <lightning:input type="text" label="Telefone:"  value="{!v.telefone}"/>
+    <lightning:input type="text" label="Descrição:" value="{!v.descricao}"/>
+
+    <lightning:button variant="brand" label="Editar dados" onclick="{! c.editarDados }" />
+    
+    
+    <aura:set attribute="else">
+
+
+    <div class="exampleHolder">
+        <lightning:spinner alternativeText="Loading" size="large" />
+    </div>
+  </aura:set>
+        
+  </aura:if> 
+        
+
+</aura:component>
